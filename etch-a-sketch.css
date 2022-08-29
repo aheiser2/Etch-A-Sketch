@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: auto;
+}
+
+div {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: none;
+    height: auto;
+    width: auto;
+    background-color: aqua;
+}
