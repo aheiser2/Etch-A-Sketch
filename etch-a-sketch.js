@@ -2,9 +2,20 @@
 let viewerNum = 0
 
 function askForNumber(){
-    let answer = prompt("How many squares per side?")
-    return viewerNum = parseInt(answer)
+    let answer = parseInt(prompt("How many squares per side?"))
+    console.log(typeof answer)
+    if(isNaN(answer)){
+        alert("Not a number!")
+        askForNumber()
+    } else 
+    if (answer >100){
+        alert("Pick a number 100 or less, please")
+        askForNumber()
+    } else {
+        return viewerNum = parseInt(answer)
+    }
 }
+console.log(viewerNum)
 
 function gridCreator(number){
     number = viewerNum
@@ -21,6 +32,8 @@ function gridCreator(number){
     }
 }
 askForNumber()
+console.log(viewerNum)
+
 gridCreator()
 
 
