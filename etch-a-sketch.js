@@ -1,5 +1,5 @@
 // function to create the number of needed square divs in the grid
-let viewerNum = 0
+let viewerNum = 16
 let currentColor = "pink"
 
 function askForNumber(){
@@ -23,18 +23,15 @@ function gridCreator(number){
     number = viewerNum
     for(let i=1; i <= (number*number); i++){
         let div = document.createElement('div')
-        let textDiv = document.createTextNode("0")
-        div.setAttribute('id', `div${i}`)
+        let textDiv = document.createTextNode("")
+        div.setAttribute('class', 'color-div')
         div.setAttribute('style', `flex-basis: ${(1/number)*100}%;
-        width: ${((1/number)*960)}px; height: ${((1/number)*960)}px`)
-        // div.setAttribute('class', 'active')
+        width: ${((1/number)*800)}px; height: ${((1/number)*800)}px`)
         div.addEventListener("mouseover", hover)
         div.appendChild(textDiv)
         document.getElementById("gridContainer").appendChild(div)
     }
 }
-// askForNumber()
-// console.log(viewerNum)
 
 gridCreator()
 
@@ -50,7 +47,7 @@ function hover(event){
 
 const btn = document.querySelector('#btn')
 btn.addEventListener('click', () => {
-    let divsToRemove = document.getElementsByTagName('div')
+    let divsToRemove = document.getElementsByClassName('color-div')
     for (let i = divsToRemove.length-1; i>= 0; i--){
         divsToRemove[i].remove()
     }
