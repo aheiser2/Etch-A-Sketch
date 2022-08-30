@@ -3,7 +3,7 @@ let viewerNum = 16
 let currentColor = "pink"
 
 function askForNumber(){
-    let answer = parseInt(prompt("How many squares per side?"))
+    let answer = parseInt(prompt("How many squares would you like per side?"))
     console.log(typeof answer)
     if(isNaN(answer)){
         alert("Not a number!")
@@ -60,6 +60,6 @@ btn.addEventListener('click', () => {
 
 const btn2 = document.querySelector('#btn2')
 btn2.addEventListener('click', () => {
-    let answer = prompt("What color do you want?")
+    let answer = prompt("What color would you like to change to?")
     currentColor = answer
 })
