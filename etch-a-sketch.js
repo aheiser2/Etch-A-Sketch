@@ -10,10 +10,12 @@ function gridCreator(number){
     number = viewerNum
     for(let i=1; i <= (number*number); i++){
         let div = document.createElement('div')
-        let textDiv = document.createTextNode("Water")
+        let textDiv = document.createTextNode("0")
         div.setAttribute('id', `div${i}`)
         div.setAttribute('style', `flex-basis: ${(1/number)*100}%;
-        width: ${((1/number)*500)}px; height: ${((1/number)*500)}px`)
+        width: ${((1/number)*960)}px; height: ${((1/number)*960)}px`)
+        // div.setAttribute('class', 'active')
+        div.addEventListener("mouseover", hover)
         div.appendChild(textDiv)
         document.getElementById("gridContainer").appendChild(div)
     }
@@ -23,6 +25,9 @@ gridCreator()
 
 
 //function to change grid div color when it's passed over (hover)
+function hover(event){
+    event.target.style.backgroundColor = "black"
+}
 
 
 // function that connects to button in HTML that asks user for the 
